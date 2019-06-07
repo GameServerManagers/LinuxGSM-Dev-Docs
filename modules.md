@@ -1,7 +1,5 @@
 # Modules
 
-
-
 Modules are individual bash scripts containing code and functions that complete specific tasks.
 
 > Modules may sometimes be referred to as function files or just functions are located in the functions directory and not be confused with bash functions. Modules have been named as such to avoid confusion.

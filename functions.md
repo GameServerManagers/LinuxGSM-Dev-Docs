@@ -1,7 +1,5 @@
 # Functions
 
-
-
 Functions allow the grouping of code to allow it to be called as many times as required, this prevents replicating the same code over and over.
 
 ## LinuxGSM Functions

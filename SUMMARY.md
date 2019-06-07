@@ -1,8 +1,7 @@
 # Table of contents
 
-* [Home](README.md)
+* [Developer Documentation](README.md)
 * [Branching](branching.md)
-* [Untitled](untitled.md)
 * [Developer Commands](developer-commands.md)
 * [Developing LinuxGSM](developing-linuxgsm.md)
 * [Exit Codes](exit-codes.md)

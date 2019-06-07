@@ -1,6 +1,6 @@
-# Home
+# Developer Documentation
 
-##     Dev Wiki
+
 
 ![LinuxGSM](https://github.com/GameServerManagers/LinuxGSM-Docs/raw/master/.gitbook/assets/linuxgsm_colour_logo_workmark_short_384.png)
 
