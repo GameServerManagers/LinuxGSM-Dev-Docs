@@ -60,13 +60,11 @@ It is also a good idea to start using [Git Kracken](https://www.gitkraken.com/) 
 
 ## Pull Requests
 
-Pull requests let others know about changes pushed to a branch in a repository on GitHub. Once a pull request is opened, it can be discussed and the potential changes with collaborators reviewed. Plus allow follow-up commits before your changes are merged into the base branch.
+Pull requests \(PR\) let others review changes a developer has been making in a branch. Once a PR is opened, a branch can be reviewed with other developers giving feedback and also add follow-up commits \(LinuxGSM core devs only\) before your changes are merged into the base branch.
 
-LinuxGSM uses Pull Requests to submit code ready to be merged in to the `develop` branch. To make the proccess easier a checklist template has been created to guide the submission.
+LinuxGSM uses Pull Requests to allow developers to submit code that is ready of nearly ready to be merged in to the `develop` branch. To make the proccess easier a checklist template has been created to guide the submission.
 
 Various unit tests are carried out to check that the PR does not break LinuxGSM and follows standards. Feedback is given by the tests once they are completed.
 
-
-
-Pull Request Quick Guide
+If the PR is not quite ready for mergin but is ready for review and feedback ensure the subject of the PR conains `[WIP]`.
 

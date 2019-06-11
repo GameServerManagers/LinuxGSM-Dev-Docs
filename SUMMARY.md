@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Developer Documentation](README.md)
+* [Feature Development Quick Guide](feature-development-quick-guide.md)
 * [Branching and Pull Requests](branching.md)
 * [Developer Commands](developer-commands.md)
 * [Developing LinuxGSM](developing-linuxgsm.md)
