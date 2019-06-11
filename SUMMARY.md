@@ -7,6 +7,7 @@
 * [Developing LinuxGSM](developing-linuxgsm.md)
 * [Exit Codes](exit-codes.md)
 * [Functions](functions.md)
+* [Text Editor Settings](text-editor-settings.md)
 * [Modules](modules.md)
 * [Style Guide](style-guide.md)
 
