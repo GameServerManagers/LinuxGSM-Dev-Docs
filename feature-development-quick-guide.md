@@ -44,12 +44,18 @@ If spare computer hardware is available, setting up an ESXi Server may be a good
 
 #### Internet Server
 
-VPS and dedicated servers can be rented relativly cheaply and is a good way to test LinuxGSM in the enviroment it is mostly used \(online\). There are several providers like Linode that provide servers from $5 p/m and allow the quick deployment of servers with different distros. Some game servers do have higher system requires than others so a more expensive VPS may be required.
+VPS and dedicated servers can be rented relativly cheaply and is a good way to test LinuxGSM in the enviroment it is mostly used \(online\). There are several providers like Linode that provide servers from $5 p/m and allow the quick deployment of servers with different distros. Some game servers do have higher system requires than others so a more powerful VPS may be required.
+
+There are many providers to choose from but below LinuxGSM developers have used previously.
 
 * Linode
 * Digital Ocean
 * Oneprovider
 * Kimsufi
+
+### SSH Client
+
+To connect to linux servers an SSH client is needed. There are various clients available to choose from. For Windows MobaXterm is a great option
 
 ## Chossing an Issue to Develop
 

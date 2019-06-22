@@ -66,5 +66,5 @@ LinuxGSM uses Pull Requests to allow developers to submit code that is ready of 
 
 Various unit tests are carried out to check that the PR does not break LinuxGSM and follows standards. Feedback is given by the tests once they are completed.
 
-If the PR is not quite ready for mergin but is ready for review and feedback ensure the subject of the PR conains `[WIP]`.
+If the PR is not quite ready for merge but is ready for review and feedback ensure the subject of the PR conains `[WIP]`\(Work in Progress\).
 
