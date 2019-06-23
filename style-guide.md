@@ -80,18 +80,18 @@ fi
 
 Use the `-v` expression to check a var exists instead of `-z` and `-n` as it is specifically designed to check if a var exists
 
-> note: although -v is prefered somtimes -z is required to get the correct results.
+> note: although -v is preferred sometimes -z is required to get the correct results.
 
 `-v` True if the shell variable varname is set \(has been assigned a value\).
 
 ```bash
-if [ -v "${var}" ]; then
+if [ -v varname ]; then
  # Variable exists
 fi
 ```
 
 ```bash
-if [ ! -v "${var}" ]; then
+if [ ! -v varname ]; then
  # Variable does not exist
 fi
 ```
