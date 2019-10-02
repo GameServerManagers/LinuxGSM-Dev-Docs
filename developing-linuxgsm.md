@@ -18,33 +18,7 @@ To install a specific server `linuxgsm.sh` first downloads a complete list of al
 
 A user can also run the install again if they want multiple \[\[instances\]\] of the same server. This will give an output of `gameserver-2`,`gameserver-3` etc as the file name.
 
-## Directories
-
-All LinuxGSM directories are set through the following variables.
-
-* `${rootdir}` \| The top level directory for LinuxGSM
-* \|\_\_ `${lgsmdir}` \| lgsm \|Contains all LinuxGSM related files
-* \|_\_\_\_ `${functionsdir}` \| functions \| All LinuxGSM script functions
-* \|_\_\_\_ `${libdir}` \| lib \| any lib files required for game servers
-* \|_\_\_\_ `${tmpdir}` \| tmp \| Temp directory
-* \|\_ `${serverfiles}` \| serverfiles \| the game server files \(binary,maps, models etc\)
-* \|\_ `${backupdir}` \| backups \| Backups are saved here
-* \|\_ `${scriptlogdir}` \| "${rootdir}/log/script" \| Contains LinuxGSM logs
-* \|\_ `${consolelogdir}` \| "${rootdir}/log/console" \| Contains TMUX \(console output\) logs
-
-### Server Specific Directories
-
-Each game server also has its own specific directories these are defined through the following variables
-
-### Server Specific Directories
-
-* `${systemdir}` \| `${serverfiles}/ShooterGame` \|
-* `${executabledir}` \| `${systemdir}/Binaries/Linux` \| Location of the binary file
-* `${executable}` \| `./ShooterGameServer` \| The binary file
-* `${servercfgdir}` \| `${systemdir}/Saved/Config/LinuxServer` \| Server config location
-* `${servercfg}` \| `GameUserSettings.ini` \| Server config name
-* `${servercfgdefault}` \| `GameUserSettings.ini` \| Default Server config name
-* `${servercfgfullpath}`\| `${servercfgdir}/${servercfg}` \| Default Server config location
+## 
 
 **Server Specific Information**
 
