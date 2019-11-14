@@ -11,4 +11,5 @@
 * [Modules](modules.md)
 * [Style Guide](style-guide.md)
 * [Directories](directories.md)
+* [Conventional Commits](conventional-commits.md)
 
