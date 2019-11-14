@@ -2,27 +2,27 @@
 
 ## Intro
 
-This guide will give a brief oveview on how to get started developing LinuxGSM by running though some of the basics of using GitHub and the tools you need. This is not a comprihensive guide to GitHub but should help with getting started. There are plenty of resources available online such as the [GitHub help documentation](https://help.github.com/en/github) that will help you learn more.
+This guide will give a brief overview of how to get started developing LinuxGSM by running through some of the basics of using GitHub and the tools you need. This is not a comprehensive guide to GitHub but should help with getting started. There are plenty of resources available online such as the [GitHub help documentation](https://help.github.com/en/github) that will help you learn more.
 
 ## Requirements
 
-Before you get started a few tools are required for development. The tools used are down to the developers preferences. However there are some reccomendations if you are new.
+Before you get started a few tools are required for development. The tools used are down to the developer's preferences. However, there are some recommendations if you are new.
 
 ### GitHub Account
 
-LinuxGSM uses GitHub to host the code, becuase of this a github account is required.
+LinuxGSM uses GitHub to host the code, because of this a GitHub account is required.
 
 ### Text editor
 
-LinuxGSM is written in BASH and can be developed simply by using a text editor. The reccomended text editor is Atom as it is Open Source and is developed by GitHub so has some great integrations. However if a developer is more comfortable with another editor that is fine.  For specific requirements for text editors see [Text Editor Settings](text-editor-settings.md).
+LinuxGSM is written in BASH and can be developed simply by using a text editor. The recommended text editor is Atom as it is Open Source and is developed by GitHub so has some great integrations. However, if a developer is more comfortable with another editor that is fine. For specific requirements for text editors see [Text Editor Settings](/@linuxgsm/s/linuxgsm-dev/text-editor-settings).
 
-* [Atom \(](https://atom.io/)recommended\)
+* [Atom ](https://atom.io/)\(recommended\)
 * [Sublime Text](https://www.sublimetext.com/)
 * [Notepad++](https://notepad-plus-plus.org/)
 
 ### Git Client
 
-To edit code, create branches and submit Pull Requests a Git client is required to work on the project. The reccomended Git client is Git Kracken as it is feature rich and easy to understand the branch relationships.  Atom also has a built in Git Client which is useful for beginners. Both Git Kracken and Atom integrate well with GitHub.
+To edit code, create branches and submit Pull Requests a Git client is required to work on the project. The recommended Git client is Git Kracken as it is feature-rich and easy to understand the branch relationships. Atom also has a built-in Git Client which is useful for beginners. Both Git Kracken and Atom integrate well with GitHub..
 
 * [GitKracken](https://www.gitkraken.com/) \(recommended\)
 * [Atom](https://atom.io/)
@@ -30,27 +30,27 @@ To edit code, create branches and submit Pull Requests a Git client is required 
 
 ### SSH Client
 
-To connect to Linux servers an SSH client is needed. There are various clients available to choose from. For Windows MobaXterm is a great option or the classic PuTTY. For Linux and Mac Remmina works well for saving SSH sessions.
+To connect to Linux servers an SSH client is needed. There are various clients available to choose from. For Windows, MobaXterm is a great option or the classic PuTTY. For Linux and Mac Remmina works well for saving SSH sessions.
 
 * [MobaXterm](https://mobaxterm.mobatek.net/) \(Windows\)
 * [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) \(Windows\)
 * [Remmina](https://remmina.org/) \(Linux & Mac\)
 
-### Test Enviroment
+### Test Environment
 
-LinuxGSM runs on Linux and as such requires a Linux enviroment for development and testing. Most developers will be running Windows but there are multiple ways to create a Linux development enviroment.
+LinuxGSM runs on Linux and as such requires a Linux environment for development and testing. Most developers will be running Windows but there are multiple ways to create a Linux development environment.
 
 #### Distro
 
-LinuxGSM is primarily developed on Ubuntu but also tested to work on CentOS and Debian. Different versions of a distro will also have different versions of BASH etc. So bein mindful of newer feature that might not be available on older supported distros. In general LinuxGSM will support distros that are still officialy supported by the vendor but is also reliant on if the Game Server also supports the distro. See [distro](https://docs.linuxgsm.com/linux/distro) for more info.
+LinuxGSM is primarily developed on Ubuntu but also tested to work on CentOS and Debian. Different versions of a distro will also have different versions of BASH etc. So be mindful of newer features that might not be available on older supported distros. In general, LinuxGSM will support distros that are still officially supported by the vendor but is also reliant on if the Game Server also supports the distro. See [distro](https://docs.linuxgsm.com/linux/distro) for more info.
 
 #### Virtual Machine
 
-Creating a virtual machine on a desktop or laptop is a good way to create a development enviroment. Using Virtual Box and downloading Ubuntu Server iso a test enviroment can be created quickly. However to test internet functionality there may be a requirement to open ports on a home router.
+Creating a virtual machine on a desktop or laptop is a good way to create a development environment. Using Virtual Box and downloading Ubuntu Server iso a test environment can be created quickly. However, to test internet functionality there may be a requirement to open ports on a home router.
 
-If spare computer hardware is available, setting up an ESXi or Xen Server may be a good option for a development enviroment.
+If spare computer hardware is available, setting up an ESXi or Xen Server may be a good option for a development environment.
 
-* [Virtual Box](https://www.virtualbox.org/) \(reccomended\)
+* [Virtual Box](https://www.virtualbox.org/) \(recommended\)
 * [VMware Player](https://www.vmware.com/uk/products/workstation-player.html)
 * [ESXI Server](https://www.vmware.com/uk/products/esxi-and-esx.html)
 * [Xen](https://xenproject.org/)
@@ -58,7 +58,7 @@ If spare computer hardware is available, setting up an ESXi or Xen Server may be
 
 #### Internet Server
 
-VPS and dedicated servers can be rented relativly cheaply and is a good way to test LinuxGSM in the enviroment it is mostly used \(online\). There are several providers like Linode that provide servers from $5 p/m and allow the quick deployment of servers with different distros. Some game servers do have higher system requires than others so a more powerful VPS may be required.
+VPS and dedicated servers can be rented relatively cheaply and is a good way to test LinuxGSM in the environment it is mostly used \(online\). There are several providers like Linode that provide servers from $5 p/m and allow the quick deployment of servers with different distros. Some game servers do have higher system requires than others so a more powerful VPS may be required.
 
 There are many providers to choose from but below LinuxGSM developers have used previously.
 
@@ -69,25 +69,25 @@ There are many providers to choose from but below LinuxGSM developers have used 
 
 ## Chosing an Issue to Develop
 
-Whenever someone raises new feature reques or bug is done on the [GitHub Issues](https://github.com/GameServerManagers/LinuxGSM/issues) page. There are a raft of issues with different levels of complexity. Choosing an issue to work on is down to you as an individual, however it is important you enjoy working on it. It is reccomended that a simple issues is picked first and more complex issues are attempted as you get used to LinuxGSM. Popular issues to attempt are [`type:Server Requests`](https://github.com/GameServerManagers/LinuxGSM/issues?q=is%3Aissue+is%3Aopen+label%3A%22type%3A+server+request%22) as often developers want to have a game server added to the project. Be warned however some game servers can be more difficult than others to develop.
+Whenever someone raises a new feature request or bug is done on the [GitHub Issues](https://github.com/GameServerManagers/LinuxGSM/issues) page. There is a raft of issues with different levels of complexity. Choosing an issue to work on is down to you as an individual, however, it is important you enjoy working on it. It is recommended that a simple issue is picked first and more complex issues are attempted as you get used to LinuxGSM. Popular issues to attempt are [type:Server Requests](https://github.com/GameServerManagers/LinuxGSM/issues?q=is%3Aissue+is%3Aopen+label%3A%22type%3A+server+request%22) as often developers want to have a game server added to the project. Be warned however some game servers can be more difficult than others to develop.
 
-To help filter issues GitHub uses [labels](https://help.github.com/en/github/managing-your-work-on-github/about-labels) to help identify the types of issues. Common labels include `type:bug`,`type:feature`,`command:monitor`,`game: 7 Days to Die`. Labels are split in to label types such as `type`, `command`, `game`, `info` etc to assist in triage.
+To help filter issues GitHub uses [labels](https://help.github.com/en/github/managing-your-work-on-github/about-labels) to help identify the types of issues. Common labels include `type:bug`, `type:feature`, `command:monitor`, `game: 7 Days to Die`. Labels are split into label types such as type, command, game, info etc to assist in triage.
 
 ## Starting Development
 
-To begin working on LinuxGSM you need to [fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the LinuxGSM repository once forked you will need to [clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github) your new repository to your local machine using yourchoosen git client. Once cloned it is possible to edit the code on your local machine using your text editor of choice. 
+To begin working on LinuxGSM you need to [fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the LinuxGSM repository once forked you will need to [clone](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github) your new repository to your local machine using your chosen git client. Once cloned it is possible to edit the code on your local machine using your text editor of choice. 
 
-It is reccomended you create a [branch](branching.md) to develop your code. The branch should use the Gitflow methodology and should be named `feature/[featurename]`.
+It is recommended you create a [branch](/@linuxgsm/s/linuxgsm-dev/branching) to develop your code. The branch should use the Gitflow methodology and should be named `feature/[featurename]`.
 
-Once a change has been made and saved the change will need to be commited to your local repo. When using commit it is important to leave a useful message to describe the change, this is covered in [Conventional Commits](conventional-commits.md). When you are ready to send your commits to your remote fork you will need to [push ](https://help.github.com/en/github/using-git/pushing-commits-to-a-remote-repository)the updates.
+Once a change has been made and saved the change will need to be committed to your local repo. When using commit it is important to leave a useful message to describe the change, this is covered in [Conventional Commits](/@linuxgsm/s/linuxgsm-dev/conventional-commits). When you are ready to send your commits to your remote fork you will need to [push ](https://help.github.com/en/github/using-git/pushing-commits-to-a-remote-repository)the updates.
 
 ## Using the Test Enviroment
 
-At some point you will need to test the code you have worked on. This can be done by downloading LinuxGSM and updating the repo and branch details to match your fork.
+At some point, you will need to test the code you have worked on. This can be done by downloading LinuxGSM and updating the repo and branch details to match your fork.Login to your development environment and begin installing LinuxGSM
 
 #### Setup Testing Enviroment
 
-Login to your develop enviroment and begin installing LinuxGSM 
+Login to your develop enviroment and begin installing LinuxGSM.
 
  1. Create a user and login.
 
