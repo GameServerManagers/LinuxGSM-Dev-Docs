@@ -6,7 +6,7 @@ This guide will give a brief overview of how to get started developing LinuxGSM 
 
 ## Requirements
 
-Before you get started a few tools are required for development. The tools used are down to the developer's preferences. However, there are some recommendations if you are new.
+Before you get started a few tools are required for developing LinuxGSM. The tools used are down to the developer's preferences. However, there are some recommendations if you are new.
 
 ### GitHub Account
 
@@ -14,7 +14,7 @@ LinuxGSM uses GitHub to host the code, because of this a GitHub account is requi
 
 ### Text editor
 
-LinuxGSM is written in BASH and can be developed simply by using a text editor. The recommended text editor is Atom as it is Open Source and is developed by GitHub so has some great integrations. However, if a developer is more comfortable with another editor that is fine. For specific requirements for text editors see [Text Editor Settings](/@linuxgsm/s/linuxgsm-dev/text-editor-settings).
+LinuxGSM is written in BASH and can be developed simply by using a text editor. The recommended text editor is Atom as it is Open Source and is developed by GitHub so has some great integrations. However, if you are more comfortable with another editor that is fine. For specific requirements for text editors see [Text Editor Settings](https:///@linuxgsm/s/linuxgsm-dev/text-editor-settings).
 
 * [Atom ](https://atom.io/)\(recommended\)
 * [Sublime Text](https://www.sublimetext.com/)
@@ -22,7 +22,7 @@ LinuxGSM is written in BASH and can be developed simply by using a text editor. 
 
 ### Git Client
 
-To edit code, create branches and submit Pull Requests a Git client is required to work on the project. The recommended Git client is Git Kracken as it is feature-rich and easy to understand the branch relationships. Atom also has a built-in Git Client which is useful for beginners. Both Git Kracken and Atom integrate well with GitHub..
+To edit code, create branches and submit Pull Requests a Git client is required to work on the project. The recommended Git client is Git Kracken as it is feature-rich and easy to understand the branch relationships. Atom also has a built-in Git Client which is useful for beginners. Both Git Kracken and Atom integrate well with GitHub.
 
 * [GitKracken](https://www.gitkraken.com/) \(recommended\)
 * [Atom](https://atom.io/)
@@ -67,7 +67,7 @@ There are many providers to choose from but below LinuxGSM developers have used 
 * [Oneprovider](https://oneprovider.com/)
 * [Kimsufi](https://www.kimsufi.com/)
 
-## Chosing an Issue to Develop
+## Choosing an Issue to Develop
 
 Whenever someone raises a new feature request or bug is done on the [GitHub Issues](https://github.com/GameServerManagers/LinuxGSM/issues) page. There is a raft of issues with different levels of complexity. Choosing an issue to work on is down to you as an individual, however, it is important you enjoy working on it. It is recommended that a simple issue is picked first and more complex issues are attempted as you get used to LinuxGSM. Popular issues to attempt are [type:Server Requests](https://github.com/GameServerManagers/LinuxGSM/issues?q=is%3Aissue+is%3Aopen+label%3A%22type%3A+server+request%22) as often developers want to have a game server added to the project. Be warned however some game servers can be more difficult than others to develop.
 
@@ -81,15 +81,15 @@ It is recommended you create a [branch](/@linuxgsm/s/linuxgsm-dev/branching) to 
 
 Once a change has been made and saved the change will need to be committed to your local repo. When using commit it is important to leave a useful message to describe the change, this is covered in [Conventional Commits](/@linuxgsm/s/linuxgsm-dev/conventional-commits). When you are ready to send your commits to your remote fork you will need to [push ](https://help.github.com/en/github/using-git/pushing-commits-to-a-remote-repository)the updates.
 
-## Using the Test Enviroment
+## Using the Test Environment
 
 At some point, you will need to test the code you have worked on. This can be done by downloading LinuxGSM and updating the repo and branch details to match your fork.Login to your development environment and begin installing LinuxGSM
 
-#### Setup Testing Enviroment
+#### Setup Testing Environment
 
-Login to your develop enviroment and begin installing LinuxGSM.
+Login to your develop environment and begin installing LinuxGSM.
 
- 1. Create a user and login.
+ 1. Create a user and log in.
 
 ```text
 adduser linuxgsm
@@ -115,7 +115,7 @@ mkdir [gameserver]
 wget -O linuxgsm.sh https://linuxgsm.sh && chmod +x linuxgsm.sh
 ```
 
-3. Rename the github username, repo and branch to match you one you are developing on.
+3. Rename the GitHub username, repo and branch to match you one you are developing on.
 
 ```bash
 ## GitHub Branch Select
@@ -132,9 +132,9 @@ githubbranch="master"
 ./linuxgsm install
 ```
 
-#### Updating the Test Enviroment
+#### Updating the Test Environment
 
-Everytime you push to remote it is possible to pull the changes to the test enviroment. This is done by using the development command `clear-functions`.
+Everytime you push to remote it is possible to pull the changes to the test environment. This is done by using the development command `clear-functions`.
 
 To use clear-functions activate development mode.
 
