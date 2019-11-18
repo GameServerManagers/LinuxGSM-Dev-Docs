@@ -1,8 +1,12 @@
 # Exit Codes
 
-Below is a list of exit codes and explanations for each code.
+Below is a list of exit codes and explanations for each code. An exit code hightights the state of the code once it has completed its task. This is used to highlight if the proccess completed, failed or somwhere inbetween.
 
-to see the exit code you can activate `./gameserver dev-debug`
+to see the exit code you can activate developer mode.
+
+```text
+./gameserver developer
+```
 
 ### Pass
 
@@ -46,9 +50,9 @@ to see the exit code you can activate `./gameserver dev-debug`
 * **On Screen Interactive:** Information!
 * **Logfile:** INFO
 
-### For Developers
+### How to used exit codes in code
 
-An exit code is generated when you specify a logfile message _e.g fn\_script\_log\_fatal_. When you want the script to exit you must use core\_exit.sh rather than just the exit command. core\_exit.sh will then handle the exit. Each time you have a new variable for writing to the log file the code will change to that code. For example if LinuxGSM experiences and error with code 2 then resolves the issue and passes the final code will be 0.
+An exit code is generated when you specify a logfile message e.g __`fn_script_log_fatal`. When you want the script to exit you must use `core_exit.sh` rather than just the exit command. `core_exit.sh` will then handle the exit and specify the last know exit code. So if the more recent command was `fn_script_log_fatal`then the exit code will be 1
 
 #### Examples
 
