@@ -1,15 +1,32 @@
 # Table of contents
 
-* [Developer Documentation](README.md)
-* [Feature Development Quick Guide](feature-development-quick-guide.md)
-* [Branching and Pull Requests](branching.md)
-* [Developer Commands](developer-commands.md)
-* [Developing LinuxGSM](developing-linuxgsm.md)
-* [Exit Codes](exit-codes.md)
-* [Functions](functions.md)
-* [Text Editor Settings](text-editor-settings.md)
-* [Modules](modules.md)
-* [Style Guide](style-guide.md)
-* [Directories](directories.md)
-* [Conventional Commits](conventional-commits.md)
+* [Home](README.md)
+* [Programming Language](programming-language.md)
+
+## Getting Started
+
+* [Development Software](getting-started/development-software.md)
+* [Test Environment](getting-started/test-environment.md)
+* [Branching and Pull Requests](getting-started/branching.md)
+* [Developer Commands](getting-started/developer-commands.md)
+* [Developing LinuxGSM](getting-started/developing-linuxgsm.md)
+
+## Workflow <a id="workflow-1"></a>
+
+* [Workflow](workflow-1/workflow.md)
+* [Agile](workflow-1/agile.md)
+* [Gitflow](workflow-1/gitflow.md)
+
+## Code Standards
+
+* [Exit Codes](code-standards/exit-codes.md)
+* [Modules](code-standards/modules.md)
+* [Functions](code-standards/functions.md)
+* [Style Guide](code-standards/style-guide.md)
+* [Shellcheck Linter](code-standards/shellcheck-linter.md)
+* [Conventional Commits](code-standards/conventional-commits.md)
+* [Text Editor Settings](code-standards/text-editor-settings.md)
+* [Game Server Querying](game-server-querying-1.md)
+* [Unit Tests](unit-tests.md)
+* [Getting Started](feature-development-quick-guide.md)
 
