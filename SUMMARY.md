@@ -19,10 +19,10 @@
 
 ## Code Standards
 
-* [Exit Codes](code-standards/exit-codes.md)
-* [Modules](code-standards/modules.md)
-* [Functions](code-standards/functions.md)
 * [Style Guide](code-standards/style-guide.md)
+* [Functions](code-standards/functions.md)
+* [Modules](code-standards/modules.md)
+* [Exit Codes](code-standards/exit-codes.md)
 * [Shellcheck Linter](code-standards/shellcheck-linter.md)
 * [Conventional Commits](code-standards/conventional-commits.md)
 * [Text Editor Settings](code-standards/text-editor-settings.md)
