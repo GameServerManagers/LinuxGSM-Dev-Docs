@@ -7,7 +7,7 @@ Here are some of them.
 
 #### Naming variables
 
-Variables should be made of lowercase letters only.
+Variables should be made of lowercase letters only and should be descriptive enough to understand its purpose \(even if the variable is longer that preferred\).
 
 ### Defining variables
 
@@ -27,12 +27,14 @@ echo "${var}"
 
 ### Directories
 
-Directories are called using LinuxGSM directories variables, or relative to those.
+Directories are called using LinuxGSM directories variables, or relative to those. Common directory variables can be found in `linuxgsm.sh` and `_default.cfg` .
 
 Examples:
 
 ```bash
-cp "config.cfg" "${servercfgfullpath}"
+mkdir -pv "${servercfgdir}"
+mkdir -pv "${lgsmdir}/config-default/config-game"
+du -sh "${rootdir}" 2> /dev/null
 find "${executabledir}/bin"
 ```
 
@@ -59,7 +61,7 @@ fi
 ### Syntax
 
 * The `if [ statement ]; then` should be a one-liner operation.
-* Signs comparators like `==`, `lt`, `lt` etc. are prefered to `-eq`, `-le`, `-lt`.
+* Signs comparators like `==`, `lt`, `lt` etc. are preferred to `-eq`, `-le`, `-lt`.
 * Anything within an if statement must be tabulated one step deeper.
 
 Example:
@@ -72,31 +74,32 @@ fi
 
 ### Expression Standards
 
-#### Avoid `! -z`and `! -n`
+Common if expressions LinuxGSM uses. More expressions [here](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html). 
 
-`-z` true if the length of string is zero. `-n` True if the length of string is non-zero.
+| Expression | Description |
+| :--- | :--- |
+| `-d` | if directory exists |
+| `! -d` | if directory does not exist |
+| `-f` | if file exists |
+| `! -f` | if file does not exist |
+| `-z` | true if length of string is zero |
+| `-n` | true if length of string is non-zero |
 
-#### To check `var` exists Use `-v`
-
-Use the `-v` expression to check a var exists instead of `-z` and `-n` as it is specifically designed to check if a var exists
-
-> note: although -v is preferred sometimes -z is required to get the correct results.
-
-`-v` True if the shell variable varname is set \(has been assigned a value\).
+{% hint style="danger" %}
+Do not use `! -z` or `! -n`
+{% endhint %}
 
 ```bash
-if [ -v varname ]; then
+if [ -n "${var}" ]; then
  # Variable exists
 fi
 ```
 
 ```bash
-if [ ! -v varname ]; then
+if [ -z "${var}" ]; then
  # Variable does not exist
 fi
 ```
-
-`-v` does not have an opposite so the `! -v` needs to be used.
 
 ## Loops
 
@@ -135,15 +138,15 @@ fn_myfunction(){
 ## Messages
 
 * Messages should be given using core\_messages.sh forms
-* Additional information messages are given in the form of echo " \* Message here"
+* Additional information messages are given in the form of `echo -e " * Message here"`
 
 ## Automated Messages
 
-Automated messages are used with any commands that are non-interactive. Examples of this include Start, Stop and Monitor. There are various different alert messages available see \[\[Exit-Codes\]\] for details.
+Automated messages are used with any commands that are non-interactive. Examples of this include Start, Stop and Monitor. There are various different alert messages available see [Exit-Codes](exit-codes.md) for details.
 
-Each automated message starts with fn\_print\_dots to show a process is happening but with no known outcome.
+Each automated message starts with `fn_print_dots` to show a process is happening but with no known outcome.
 
-fn\_print\_dots
+`fn_print_dots`
 
 ```text
 [ .... ] Starting fctrserver:
