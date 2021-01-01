@@ -26,6 +26,9 @@
 * [Shellcheck Linter](code-standards/shellcheck-linter.md)
 * [Conventional Commits](code-standards/conventional-commits.md)
 * [Text Editor Settings](code-standards/text-editor-settings.md)
+
+---
+
 * [Game Server Querying](game-server-querying-1.md)
 * [Unit Tests](unit-tests.md)
 * [Getting Started](feature-development-quick-guide.md)

@@ -84,19 +84,43 @@ Common if expressions LinuxGSM uses. More expressions [here](http://tldp.org/LDP
 | `! -f` | if file does not exist |
 | `-z` | true if length of string is zero |
 | `-n` | true if length of string is non-zero |
+| `-v` | true if the variable exists |
 
 {% hint style="danger" %}
 Do not use `! -z` or `! -n`
 {% endhint %}
 
+There is a distinct difference between -n and -v. 
+
+-n is used to check is a variable is set and not if it exists  
+-v is used to check if a variable exists and not it is set 
+
 ```bash
+var="set"
 if [ -n "${var}" ]; then
- # Variable exists
+ # Variable is set
 fi
 ```
 
 ```bash
+var=""
 if [ -z "${var}" ]; then
+ # Variable is not set
+fi
+```
+
+```text
+var=""
+# OR
+var="set"
+if [ -v var ]; then
+ # Variable exista
+fi
+```
+
+```text
+# var is missing
+if [ ! -v var ]; then
  # Variable does not exist
 fi
 ```
