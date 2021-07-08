@@ -16,7 +16,7 @@ _Bash_ is a "Unix shell": a command-line interface for interacting with the oper
 
 BASH script is often used by Linux System Administrators to automate repetitive tasks on Linux servers and often used in the same way Windows Admins use [BATCH](https://en.wikipedia.org/wiki/Batch_file) Script is used on Windows. BASH is available on all Linux systems, it is very stable, reliable and most people who interact with Linux will have had some exposure to it.
 
-LinuxGSM started as a simple BASH script to easily control and manage a game server \(Killing Floor\). As Daniel Gibbs \(lead developer\) was a Linux Systems Administrator at the time and other examples f managing game servers often used BASH it simply made sense to use it.
+LinuxGSM started as a simple BASH script to easily control and manage a game server \(Killing Floor\). As Daniel Gibbs \(lead developer\) was a Linux Systems Administrator at the time and other examples of managing game servers often used BASH it simply made sense to use it.
 
 LinuxGSM has envolved and grown drastically over time to add more commands and features from the early days, however, it essentially still does the same thing just on a larger scale. BASH is a relatively simple language to use and learn and does not require compiling and can be written in any basic text editor.
 
