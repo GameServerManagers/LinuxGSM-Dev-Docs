@@ -49,7 +49,7 @@ Automatically detects required dependencies using the ldd command.
 
 ### Query Raw
 
-Queries the game server using,`gamedig` , `gsquery.py`, `tcp` and `upd`, giving a raw output. This can diagnose if the game server query is working and configured correctly.
+Queries the game server using,`gamedig` , `query_gsquery.py`, `tcp` and `upd`, giving a raw output. This can diagnose if the game server query is working and configured correctly.
 
 ```bash
 ./gameserver query-raw
