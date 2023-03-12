@@ -193,7 +193,7 @@ The option of a newline is also available by appending `_nl` for example `fn_pri
 
 #### Characteristics
 
-Interactive messages contain extra detail at the begining of teh message that is pre-populated. Full stops must `not` be used with this type of message.
+Interactive messages contain extra detail at the begining of the message that is pre-populated. Full stops must `not` be used with this type of message.
 
 ### Interactive Messages
 
