@@ -22,7 +22,7 @@ For more info about line endings check out the article "[The Great Newline Schis
 
 ## Trailing White Spaces
 
-When developing code somtimes it can be easy to end up with trailing white spaces. as shown below.
+When developing code sometimes it can be easy to end up with trailing white spaces. as shown below.
 
 ```text
 fn_example_func(){
