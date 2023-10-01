@@ -49,6 +49,6 @@ The LinuxGSM project uses [Discord](https://discordapp.com) as the main method o
 
 ## SteamDB
 
-[SteamDB](https://steamdb.info/) is a great resource to searching for data related to Steam. This can be used to looking up appid's for game servers
+[SteamDB](https://steamdb.info/) is a great resource for finding data related to Steam. This can be used to look up appid's for game servers as well as checking if a game server supports Linux. For example, The Rust dedicated server is found here [https://steamdb.info/app/258550/info/](https://steamdb.info/app/258550/info/)
 
 ##

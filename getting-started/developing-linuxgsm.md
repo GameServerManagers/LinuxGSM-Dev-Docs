@@ -2,39 +2,83 @@
 
 This page has been designed to help you learn how LinuxGSM code works.
 
-As a user, it will allow you for a better understanding of how LinuxGSM works. As a developer, it will help you with adding new servers, fixing bugs and adding new features.
+As a user, it will allow you a better understanding of how LinuxGSM works. As a developer, it will help you with adding new servers, fixing bugs, and adding new features.
 
 ## Generalities
 
-The LinuxGSM _executable_ `./gameserver` is the main entry point for users, their main interactions will be with this script. However, from a development perspective, this is only the gateway as it simply does initial the bootstrap and points to the commands and modules that are stored elsewhere. LinuxGSM is made up of many smaller \(mainly bash\) scripts \(modules\) that interact with each other to complete a set of tasks. A command will complete its set of tasks using the LinuxGSM modules.
+The LinuxGSM _executable_ `./gameserver` is the main entry point for users, their main interactions will be with this script. However, from a development perspective, this is only the gateway as it simply does the initial bootstrap and points to the commands and modules that are stored elsewhere. LinuxGSM is made up of many smaller (mainly bash) scripts (modules) that interact with each other to complete a set of tasks. A command will complete its set of tasks using the LinuxGSM modules.
 
 ## Main Executable
 
-The main executable file `linuxgsm.sh` or `gameserver.sh` is what the user interacts with to run commands.
+The main executable file `linuxgsm.sh` or `gameserver` is what the user interacts with to run commands.
 
-`linuxgsm.sh`is designed to be used for the installation of a specific game server. You can run `./linuxgsm.sh install` to get a menu of the available servers or `./linuxgsm.sh gameserver` to install the specific game server.
+`linuxgsm.sh` is designed to be used for the installation of a specific game server. You can run `./linuxgsm.sh install` to get a menu of the available servers or `./linuxgsm.sh gameserver` to install the specific game server.
 
 To install a specific server `linuxgsm.sh` first downloads a complete list of all available servers from `serverlist.csv`. This file contains variables required to identify the server; `${gamename}`, `${shortname}` and `${servername}`. When installing a game server `linuxgsm.sh` copies itself using the`${servername}` variable as the script name and inserting the other variables into the copied file. The added variables allow LinuxGSM to know which server the user selected.
 
-A user can also run the install again if they want multiple \[\[instances\]\] of the same server. This will give an output of `gameserver-2`,`gameserver-3` etc as the file name.
+A user can also run the install again if they want multiple instances of the same server. This will give an output of `gameserver-2`,`gameserver-3` etc as the file name.
 
-## 
+## Adding a new Game Server
 
-**Server Specific Information**
+Adding a new game server is one of the most common things developers do. This guide will help you add a new game server to LinuxGSM.
 
-Here are the things you need to look after when deploying a new server:
+{% hint style="info" %}
+replace gameserver with the name of the new server e.g rustserver
+{% endhint %}
 
-* `## SteamCMD Login` section needs to be present only if the game server requires a steam connection.
-* Paths variables, especially config paths
-* appid="" \(steamcmd games only\)
-* servicename="" \(must be unique\)
-* gamename="" \(must be unique\)
-* engine=""
-* githubuser/repo/branch="" \(if you dev on your own github or a branch can help a lot\)
+### Create new \_default.cfg config file
 
-**Server Settings and start command**
+Firstly create a new `_default.cfg` file in `lgsm/config-default/config-lgsm/gameserver` . An existing \_default.cfg file can be used as a template.
 
-This part contains any setting that can be set as a start command for the given server. You will then use `fn_parms` and its `parms=""` variable to call those start parameters.
+Update all the variables in the new `_default.cfg` file to fit the new server.
+
+Some common variables that will need updating:
+
+* Add `## SteamCMD Login` section only if required.
+* `startparameters` are any parameters the executable requires to run the game server.
+* `appid`  used to download a game server from Steam. Remove if not using steam.
+* \`steammaster\` used if the game servers are listed on the Steam master servers.
+* `stopmode` defines how a server can safely exit.
+* `querymode` defines the type of query monitor that can be used to check the server is responding.
+* console type highlights to users if the console outputs and is interactive.
+* Game Server Details `gamename` , `engine`, `glibc`.
+* Various directory and config variables.
+
+### Add the new server to serverlist.csv
+
+Add the new server details to `serverlist.csv` as well as add any dependency requirements to all the distro csv files found in `lgsm/data` directory.
+
+### Add any fixes to a fix file
+
+Some game servers require alterations before they can start common examples include:
+
+* copying library files to serverfiles
+* symlinking files
+* creating directories
+* adding a directory to `LD_LIBRARY_PATH`
+
+If this is required a fix module will need to be created.
+
+1. Create a new module called `fix_[shortname].sh` (use an existing example as guidance)
+2. Add the required fixes to the module
+3. Add the module to `fix.sh`
+4. Add the fix to `core_modules.sh` list
+
+### Server Querying
+
+Game servers can often be queried to check the server is running and return useful info. LinuxGSM uses gsquery.py to complete simple pings and [gamedig](https://github.com/gamedig/node-gamedig) to get detailed info returned in json format.&#x20;
+
+Most game servers use the valve protocol for allowing queries, however, others are available. Look for any developer documentation to try and find out if querying is supported.&#x20;
+
+Use the `query-raw` command to assist in testing the querying of the new game server.&#x20;
+
+### Stop Mode
+
+Game servers will be able to gracfully exit using various methods. Figure out the method the new game server uses. See [stop mode](https://docs.linuxgsm.com/features/stop-mode).
+
+### Glibc Version
+
+Most game servers require a minimum glibc version. Use the `detect-glibc` command to find out the minimum glibc version required
 
 #### Functions, commands and script files
 
@@ -50,7 +94,7 @@ Note: You need to update those files with update-functions command after adding 
 Here are the command functions you might need to alter when adding a new server:
 
 * command\_install.sh - Server installation must work properly
-* command\_update.sh - if the given game supports updates \(might required to add a file for that matter, for now, we use to add a single file for install and update, like for TeamSpeak 3\).
+* command\_update.sh - if the given game supports updates (might required to add a file for that matter, for now, we use to add a single file for install and update, like for TeamSpeak 3).
 * command\_details.sh - Server details need to be displayed properly
 * command\_monitor.sh & monitor\_gsquery.sh, query\_gsquery.py & query\_gsquery.py - You'll need to read carefully and understand this code before altering it.
 * core\_getopt.sh - You will define available commands in this one, displayed when the user runs `./gameserver` without an argument. Either use an existing opt or make a new one if needed.
@@ -88,44 +132,44 @@ Framework syntax is: `fn_print_whatever "This is your message"` If you want to r
 
 **On-Screen - Automated functions**
 
-* \[ .... \] \| fn\_print\_dots \| fn\_print\_dots\_nl
-* \[  OK  \] \| fn\_print\_ok \| fn\_print\_ok\_nl
-* \[ FAIL \] \| fn\_print\_fail \| fn\_print\_fail\_nl
-* \[ ERROR \] \| fn\_print\_error \| fn\_print\_error\_nl
-* \[ WARN \] \| fn\_print\_warn \| fn\_print\_warn\_nl
-* \[ INFO \] \| fn\_print\_info \| fn\_print\_info\_nl
+* \[ .... ] | fn\_print\_dots | fn\_print\_dots\_nl
+* \[ OK ] | fn\_print\_ok | fn\_print\_ok\_nl
+* \[ FAIL ] | fn\_print\_fail | fn\_print\_fail\_nl
+* \[ ERROR ] | fn\_print\_error | fn\_print\_error\_nl
+* \[ WARN ] | fn\_print\_warn | fn\_print\_warn\_nl
+* \[ INFO ] | fn\_print\_info | fn\_print\_info\_nl
 
 **On-Screen - Interactive messages**
 
-* Print $gamename $commandaction and jump some lines \| fn\_print\_header \(used at the beginning of a command\)
-* Complete! \|fn\_print\_complete \| fn\_print\_complete\_nl
-* Failure! \| fn\_print\_failure \| fn\_print\_failure\_nl
-* Error! \| fn\_print\_error2 \| fn\_print\_error2\_nl
-* Warning! \| fn\_print\_warning \| fn\_print\_warning\_nl
-* Information! \| fn\_print\_information \| fn\_print\_information\_nl
+* Print $gamename $commandaction and jump some lines | fn\_print\_header (used at the beginning of a command)
+* Complete! |fn\_print\_complete | fn\_print\_complete\_nl
+* Failure! | fn\_print\_failure | fn\_print\_failure\_nl
+* Error! | fn\_print\_error2 | fn\_print\_error2\_nl
+* Warning! | fn\_print\_warning | fn\_print\_warning\_nl
+* Information! | fn\_print\_information | fn\_print\_information\_nl
 
 **On-Screen End of Line**
 
-* OK\| fn\_print\_ok\_eol \| fn\_print\_ok\_eol\_nl
-* FAIL \| fn\_print\_fail\_eol \| fn\_print\_fail\_eol\_nl
-* WARN \| fn\_print\_warn\_eol \| fn\_print\_warn\_eol\_nl
-* FAIL \| fn\_print\_info\_eol \| fn\_print\_info\_eol\_nl
-* QUERYING \| fn\_print\_querying\_eol \| fn\_print\_querying\_eol\_nl
-* CHECKING \| fn\_print\_checking\_eol \| fn\_print\_checking\_eol\_nl
-* CANCELED \| fn\_print\_canceled\_eol \| fn\_print\_canceled\_eol\_nl
-* REMOVED \| fn\_print\_removed\_eol \| fn\_print\_removed\_eol\_nl
-* UPDATE \| fn\_print\_update\_eol \| fn\_print\_update\_eol\_nl
+* OK| fn\_print\_ok\_eol | fn\_print\_ok\_eol\_nl
+* FAIL | fn\_print\_fail\_eol | fn\_print\_fail\_eol\_nl
+* WARN | fn\_print\_warn\_eol | fn\_print\_warn\_eol\_nl
+* FAIL | fn\_print\_info\_eol | fn\_print\_info\_eol\_nl
+* QUERYING | fn\_print\_querying\_eol | fn\_print\_querying\_eol\_nl
+* CHECKING | fn\_print\_checking\_eol | fn\_print\_checking\_eol\_nl
+* CANCELED | fn\_print\_canceled\_eol | fn\_print\_canceled\_eol\_nl
+* REMOVED | fn\_print\_removed\_eol | fn\_print\_removed\_eol\_nl
+* UPDATE | fn\_print\_update\_eol | fn\_print\_update\_eol\_nl
 
 **Logging**
 
 Syntax: `fn_script_log "Message goes here."` Output: `## Feb 28 14:56:58 ut99-server: Monitor: Message goes here.`
 
-* Simple action log \| fn\_script\_log
-* PASS \(a successful test\) \| fn\_script\_log\_pass
-* FATAL \(an error has interrupted LGSM\) \| fn\_script\_log\_fatal
-* ERROR \| fn\_script\_log\_error
-* WARN \| fn\_script\_log\_warn
-* INFO \| fn\_script\_log\_info
+* Simple action log | fn\_script\_log
+* PASS (a successful test) | fn\_script\_log\_pass
+* FATAL (an error has interrupted LGSM) | fn\_script\_log\_fatal
+* ERROR | fn\_script\_log\_error
+* WARN | fn\_script\_log\_warn
+* INFO | fn\_script\_log\_info
 
 #### Checks
 
@@ -143,7 +187,7 @@ There are several checks available:
 * check\_status.sh checks the process status of the server. Either online or offline
 * check\_steamcmd.sh checks if SteamCMD is installed correctly
 * check\_system\_dir.sh checks if systemdir is accessible
-* check\_system\_requirements.sh checks RAM requirements \(maybe more into the future\)
+* check\_system\_requirements.sh checks RAM requirements (maybe more into the future)
 * check\_tmuxception.sh checks and prevents server start from tmux or screen
 
 **core\_exit.sh**
@@ -151,7 +195,7 @@ There are several checks available:
 This script allows for the use of exit codes which will print different outputs to LinuxGSM logs. Running `core_exit.sh` defaults exitcode variable to 0 which stands for a proper exit
 
 * Normal exit: exitcode=0
-* FATAL  exitcode=1
+* FATAL exitcode=1
 * ERROR: exitcode=2
 * WARN: exitcode=3
 
@@ -177,16 +221,16 @@ You will usually be developing onto your own repo. Using your own repo instead o
 1. Display your main "gameserver" file on GitHub, and select "Raw".
 2. Make a test user, login to it
 3. wget your Raw link and chmod +x the script.
-4. Edit your "gameserver" file by changing GitHub information to your username and repo and branch.
+4.  Edit your "gameserver" file by changing GitHub information to your username and repo and branch.
 
-   ```bash
-   ## Github Branch Select
-   # Allows for the use of different function files
-   # from a different repo and/or branch.
-   githubuser="YourUsername"
-   githubrepo="YourRepository"
-   githubbranch="YourBranchName"
-   ```
+    ```bash
+    ## Github Branch Select
+    # Allows for the use of different function files
+    # from a different repo and/or branch.
+    githubuser="YourUsername"
+    githubrepo="YourRepository"
+    githubbranch="YourBranchName"
+    ```
 
 Now, any command you run will get your own GitHub files, and after any change you make on your repo, `./gameserver uf` will grab new files. If you make a change and that `./gameserver uf` don't get them, it means you were too quick, and that your curl still has old files in cache; in this case, you'll need to wait a few minutes to get your modifications.
 
@@ -199,6 +243,5 @@ You need to make sure that all needed commands displayed in opt work properly. S
 If you found a bug, either you'll instantly know how to fix it, or you won't. And either it will be a bug caused by your own code or a bug into LinuxGSM itself. So let's address those cases.
 
 1. It's caused by your own code parts and you know how to fix it: Just go on and fix it.
-2. It's caused by your own code parts but you got no idea why: Use `./gameserver dev-debug` that will add a very detailed log into your rootdir that might help you figure this out. To disable the dev-debug mode, just re-run the command. If you still can't find why it's not working, come get help on Discord's \#gsm-development channel or Github issue that might have been created for this issue.
+2. It's caused by your own code parts but you got no idea why: Use `./gameserver dev-debug` that will add a very detailed log into your rootdir that might help you figure this out. To disable the dev-debug mode, just re-run the command. If you still can't find why it's not working, come get help on Discord's #gsm-development channel or Github issue that might have been created for this issue.
 3. You found a bug into LinuxGSM itself. First, you need to be sure that it's really a bug that affects every game, by testing with another game onto the original repo, otherwise, if it only affects your game, you will usually just need to add a clever conditional check to fix the issue.
-

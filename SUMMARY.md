@@ -7,14 +7,15 @@
 
 * [Development Software](getting-started/development-software.md)
 * [Test Environment](getting-started/test-environment.md)
-* [Branching and Pull Requests](getting-started/branching.md)
 * [Developer Commands](getting-started/developer-commands.md)
 * [Developing LinuxGSM](getting-started/developing-linuxgsm.md)
 
-## Workflow <a id="workflow-1"></a>
+## Workflow <a href="#workflow-1" id="workflow-1"></a>
 
+* [Semantic Versioning](workflow-1/semantic-versioning.md)
 * [Workflow](workflow-1/workflow.md)
 * [Agile](workflow-1/agile.md)
+* [Pull Requests](workflow-1/branching.md)
 * [Gitflow](workflow-1/gitflow.md)
 
 ## Code Standards
@@ -27,9 +28,8 @@
 * [Conventional Commits](code-standards/conventional-commits.md)
 * [Text Editor Settings](code-standards/text-editor-settings.md)
 
----
+***
 
 * [Game Server Querying](game-server-querying-1.md)
 * [Unit Tests](unit-tests.md)
 * [Getting Started](feature-development-quick-guide.md)
-
