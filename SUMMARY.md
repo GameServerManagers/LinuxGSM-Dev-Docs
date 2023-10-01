@@ -18,19 +18,18 @@
 * [Agile](workflow/agile.md)
 * [Pull Requests](workflow/branching.md)
 * [Gitflow](workflow/gitflow.md)
+* [Conventional Commits](code-standards/conventional-commits.md)
 
 ## Technical
-* [Semantic Versioning](technical/commands.md)
+* [Commands](technical/commands.md)
+* [Exit Codes](technical/exit-codes.md)
+* [Functions](technical/functions.md)
+* [Modules](technical/modules.md)
 
 ## Code Standards
 
 * [Style Guide](code-standards/style-guide.md)
-* [Functions](code-standards/functions.md)
-* [Modules](code-standards/modules.md)
-* [Commands](code-standards/commands.md)
-* [Exit Codes](code-standards/exit-codes.md)
 * [Shellcheck Linter](code-standards/shellcheck-linter.md)
-* [Conventional Commits](code-standards/conventional-commits.md)
 * [Text Editor Settings](code-standards/text-editor-settings.md)
 
 ***
