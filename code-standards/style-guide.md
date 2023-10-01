@@ -1,13 +1,13 @@
 # Style Guide
 
-In order to make LinuxGSM as coherent as possible, we adopted some code conventions to follow.  
+In order to make LinuxGSM as coherent as possible, we adopted some code conventions to follow.\
 Here are some of them.
 
 ## Variables
 
 #### Naming variables
 
-Variables should be made of lowercase letters only and should be descriptive enough to understand its purpose \(even if the variable is longer that preferred\).
+Variables should be made of lowercase letters only and should be descriptive enough to understand its purpose (even if the variable is longer that preferred).
 
 ### Defining variables
 
@@ -42,7 +42,7 @@ find "${executabledir}/bin"
 
 If statements should look like the following
 
-```text
+```
 if [ "${shortname}" == "csgo" ];then
    # content
 fi
@@ -50,7 +50,7 @@ fi
 
 if statements with multiple options like so
 
-```text
+```
 if [ "${shortname}" == "csgo" ]||[ "${shortname}" == "css" ]; then
    # content
 fi
@@ -74,26 +74,26 @@ fi
 
 ### Expression Standards
 
-Common if expressions LinuxGSM uses. More expressions [here](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html). 
+Common if expressions LinuxGSM uses. More expressions [here](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect\_07\_01.html).
 
-| Expression | Description |
-| :--- | :--- |
-| `-d` | if directory exists |
-| `! -d` | if directory does not exist |
-| `-f` | if file exists |
-| `! -f` | if file does not exist |
-| `-z` | true if length of string is zero |
-| `-n` | true if length of string is non-zero |
-| `-v` | true if the variable exists |
+| Expression | Description                          |
+| ---------- | ------------------------------------ |
+| `-d`       | if directory exists                  |
+| `! -d`     | if directory does not exist          |
+| `-f`       | if file exists                       |
+| `! -f`     | if file does not exist               |
+| `-z`       | true if length of string is zero     |
+| `-n`       | true if length of string is non-zero |
+| `-v`       | true if the variable exists          |
 
 {% hint style="danger" %}
 Do not use `! -z` or `! -n`
 {% endhint %}
 
-There is a distinct difference between -n and -v. 
+There is a distinct difference between -n and -v.
 
--n is used to check is a variable is set and not if it exists  
--v is used to check if a variable exists and not it is set 
+\-n is used to check is a variable is set and not if it exists\
+\-v is used to check if a variable exists and not it is set
 
 ```bash
 var="set"
@@ -109,7 +109,7 @@ if [ -z "${var}" ]; then
 fi
 ```
 
-```text
+```
 var=""
 # OR
 var="set"
@@ -118,7 +118,7 @@ if [ -v var ]; then
 fi
 ```
 
-```text
+```
 # var is missing
 if [ ! -v var ]; then
  # Variable does not exist
@@ -139,7 +139,7 @@ done
 
 ## Comments
 
-As English is not always the native language of a developer, comments should use a formal writing style and be straight to the point. If unsure this short formal writing [guide](http://www2.ivcc.edu/rambo/tip_formal_writing_voice.htm) will help.
+As English is not always the native language of a developer, comments should use a formal writing style and be straight to the point. If unsure this short formal writing [guide](http://www2.ivcc.edu/rambo/tip\_formal\_writing\_voice.htm) will help.
 
 ```bash
 # Using comments help developers understand complex code, but should be used sparingly.
@@ -166,13 +166,13 @@ fn_myfunction(){
 
 ## Automated Messages
 
-Automated messages are used with any commands that are non-interactive. Examples of this include Start, Stop and Monitor. There are various different alert messages available see [Exit-Codes](exit-codes.md) for details.
+Automated messages are used with any commands that are non-interactive. Examples of this include Start, Stop and Monitor. There are various different alert messages available see [Exit-Codes](broken-reference) for details.
 
 Each automated message starts with `fn_print_dots` to show a process is happening but with no known outcome.
 
 `fn_print_dots`
 
-```text
+```
 [ .... ] Starting fctrserver:
 ```
 
@@ -180,13 +180,13 @@ Once an outcome of a process is known the message uses an outcome message like `
 
 fn\_print\_ok
 
-```text
+```
 [  OK  ] Starting fctrserver: Factorio Server
 ```
 
 The option of a newline is also available by appending `_nl` for example `fn_print_ok_nl`. This will add a carriage return to the message preventing it being overwritten by the next message.
 
-```text
+```
 [  OK  ] Stopping fctrserver: Graceful: CTRL+c: 2: OK
 [ .... ] Starting fctrserver: Factorio Server
 ```
@@ -197,15 +197,15 @@ Interactive messages contain extra detail at the begining of the message that is
 
 ### Interactive Messages
 
-Interactive messages are used with any commands that have interactive elements. Examples of this include Install, console and debug. There are various different alert messages available see \[\[Exit-Codes\]\] for details.
+Interactive messages are used with any commands that have interactive elements. Examples of this include Install, console and debug. There are various different alert messages available see \[\[Exit-Codes]] for details.
 
-```text
+```
 Warning! If fctrserver is already running it will be stopped.
 ```
 
 standard echo commands are normally used to supplement an alert or if an alert is not required. Bullet points can also be used
 
-```text
+```
 Information! Press "CTRL+b" then "d" to exit console.
 Warning! Do NOT press CTRL+c to exit.
 * https://docs.linuxgsm.com/commands/console
@@ -214,4 +214,3 @@ Warning! Do NOT press CTRL+c to exit.
 #### Characteristics
 
 Treat interactive messages as a standard sentence. All messages must begin with a capital and end with a full stop
-

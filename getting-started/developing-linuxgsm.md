@@ -20,11 +20,11 @@ A user can also run the install again if they want multiple instances of the sam
 
 ## Modules
 
-Modules are individual bash scripts containing code and functions that complete specific tasks. See the [modules](../code-standards/modules.md) page for more info.
+Modules are individual bash scripts containing code and functions that complete specific tasks. See the [modules](broken-reference) page for more info.
 
 ## Commands
 
-Within LInuxGSM there are many commands that a user will run to complete tasks such as start, stop, monitor, and details. Command scripts are stored will all other modules and are always named something like `command_install.sh`. See the [commands](../code-standards/commands.md) page for more info.
+Within LInuxGSM there are many commands that a user will run to complete tasks such as start, stop, monitor, and details. Command scripts are stored will all other modules and are always named something like `command_install.sh`. See the [commands](broken-reference) page for more info.
 
 
 
