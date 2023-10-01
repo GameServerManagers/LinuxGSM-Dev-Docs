@@ -24,11 +24,11 @@ Some common variables that will need updating:
 * Game Server Details `gamename` , `engine`, `glibc`.
 * Various directory and config variables.
 
-### Add the new server to serverlist.csv
+## Add the new server to serverlist.csv
 
 Add the new server details to `serverlist.csv` as well as add any dependency requirements to all the distro csv files found in `lgsm/data` directory.
 
-### Add any fixes to a fix file
+## Add any fixes to a fix file
 
 Some game servers require alterations before they can start common examples include:
 
@@ -44,7 +44,7 @@ If this is required a fix module will need to be created.
 3. Add the module to `fix.sh`
 4. Add the fix to `core_modules.sh` list
 
-### Server Querying
+## Server Querying
 
 Game servers can often be queried to check the server is running and return useful info. LinuxGSM uses gsquery.py to complete simple pings and [gamedig](https://github.com/gamedig/node-gamedig) to get detailed info returned in json format.&#x20;
 
@@ -52,23 +52,23 @@ Most game servers use the valve protocol for allowing queries, however, others a
 
 Use the `query-raw` command to assist in testing the querying of the new game server.&#x20;
 
-### Stop Mode
+## Stop Mode
 
 Game servers will be able to gracefully exit using various methods. Figure out the method the new game server uses. See [stop mode](https://docs.linuxgsm.com/features/stop-mode).
 
-### Glibc Version
+## Glibc Version
 
 Most game servers require a minimum glibc version. Use the `detect-glibc` command to find out the minimum glibc version required.
 
-### Details
+## Details
 
 Various game server info will need to be parsed from game server configs or variables. Use the info\_\*.sh modules to add this info.&#x20;
 
-### Custom Updater
+## Custom Updater
 
 Not all game servers use SteamCMD. If this is the case a custom update module will need to be created. There are a number of examples in the code that can be used as a baseline.
 
-Custom Commands
+## Custom Commands
 
 Some game servers may require bespoke commands to complete tasks. Examples of this include Teamspeak 3 and Unreal Tournament 2004. Take a look at the `core_getopts.sh` module for examples of how to add commands.
 
