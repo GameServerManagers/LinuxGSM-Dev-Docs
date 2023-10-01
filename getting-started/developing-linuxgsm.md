@@ -18,89 +18,15 @@ To install a specific server `linuxgsm.sh` first downloads a complete list of al
 
 A user can also run the install again if they want multiple instances of the same server. This will give an output of `gameserver-2`,`gameserver-3` etc as the file name.
 
-## Adding a new Game Server
+## Modules
 
-Adding a new game server is one of the most common things developers do. This guide will help you add a new game server to LinuxGSM.
+Modules are individual bash scripts containing code and functions that complete specific tasks. See the [modules](../code-standards/modules.md) page for more info.
 
-{% hint style="info" %}
-replace gameserver with the name of the new server e.g rustserver
-{% endhint %}
+## Commands
 
-### Create new \_default.cfg config file
+Within LInuxGSM there are many commands that a user will run to complete tasks such as start, stop, monitor, and details. Command scripts are stored will all other modules and are always named something like `command_install.sh`. See the [commands](../code-standards/commands.md) page for more info.
 
-Firstly create a new `_default.cfg` file in `lgsm/config-default/config-lgsm/gameserver` . An existing \_default.cfg file can be used as a template.
 
-Update all the variables in the new `_default.cfg` file to fit the new server.
-
-Some common variables that will need updating:
-
-* Add `## SteamCMD Login` section only if required.
-* `startparameters` are any parameters the executable requires to run the game server.
-* `appid`  used to download a game server from Steam. Remove if not using steam.
-* \`steammaster\` used if the game servers are listed on the Steam master servers.
-* `stopmode` defines how a server can safely exit.
-* `querymode` defines the type of query monitor that can be used to check the server is responding.
-* console type highlights to users if the console outputs and is interactive.
-* Game Server Details `gamename` , `engine`, `glibc`.
-* Various directory and config variables.
-
-### Add the new server to serverlist.csv
-
-Add the new server details to `serverlist.csv` as well as add any dependency requirements to all the distro csv files found in `lgsm/data` directory.
-
-### Add any fixes to a fix file
-
-Some game servers require alterations before they can start common examples include:
-
-* copying library files to serverfiles
-* symlinking files
-* creating directories
-* adding a directory to `LD_LIBRARY_PATH`
-
-If this is required a fix module will need to be created.
-
-1. Create a new module called `fix_[shortname].sh` (use an existing example as guidance)
-2. Add the required fixes to the module
-3. Add the module to `fix.sh`
-4. Add the fix to `core_modules.sh` list
-
-### Server Querying
-
-Game servers can often be queried to check the server is running and return useful info. LinuxGSM uses gsquery.py to complete simple pings and [gamedig](https://github.com/gamedig/node-gamedig) to get detailed info returned in json format.&#x20;
-
-Most game servers use the valve protocol for allowing queries, however, others are available. Look for any developer documentation to try and find out if querying is supported.&#x20;
-
-Use the `query-raw` command to assist in testing the querying of the new game server.&#x20;
-
-### Stop Mode
-
-Game servers will be able to gracfully exit using various methods. Figure out the method the new game server uses. See [stop mode](https://docs.linuxgsm.com/features/stop-mode).
-
-### Glibc Version
-
-Most game servers require a minimum glibc version. Use the `detect-glibc` command to find out the minimum glibc version required
-
-#### Functions, commands and script files
-
-Script files are located in ${functionsdir}, which is ${rootdir}/lgsm/functions
-
-* Every single script file must be declared in core\_functions.sh
-* Commands are declared in core\_getopt.sh, depending on the game or engine
-
-Note: You need to update those files with update-functions command after adding a new one.
-
-#### Commands
-
-Here are the command functions you might need to alter when adding a new server:
-
-* command\_install.sh - Server installation must work properly
-* command\_update.sh - if the given game supports updates (might required to add a file for that matter, for now, we use to add a single file for install and update, like for TeamSpeak 3).
-* command\_details.sh - Server details need to be displayed properly
-* command\_monitor.sh & monitor\_gsquery.sh, query\_gsquery.py & query\_gsquery.py - You'll need to read carefully and understand this code before altering it.
-* core\_getopt.sh - You will define available commands in this one, displayed when the user runs `./gameserver` without an argument. Either use an existing opt or make a new one if needed.
-* command\_start.sh & command\_stop.sh - Of course, your server needs to be able to start and stop properly.
-* command\_debug.sh & command\_console.sh - Those commands usually work out of the box, but might require some more work. If not using tmux, then console should be disabled for this server in core\_getopt.sh.
-* info\_config.sh - You might need to read variables out of configuration files such as Rcon information in the case of Squad.
 
 #### Fixes
 
