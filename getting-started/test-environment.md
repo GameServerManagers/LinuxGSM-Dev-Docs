@@ -1,22 +1,26 @@
 # Test Environment
 
-LinuxGSM runs on Linux \(obviously\) and as such requires a Linux test environment to test game servers and code. If you are running a LInux desktop then you can run LinuxGSM using your desktop. However, Most developers will be running Windows but there are multiple ways to create a Linux test environment.
+LinuxGSM is designed to run on Linux, and therefore, a Linux test environment is essential for testing game servers and code changes. Whether you're already using a Linux desktop or primarily work on Windows, there are multiple ways to create a suitable Linux test environment. Additionally, if you are using Windows, you can leverage Windows Subsystem for Linux (WSL) to streamline your development process.
+
+## Distro
+
+LinuxGSM is primarily developed on Debian-based distros but is also tested to work on RedHat-based distros. Keep in mind that different distributions and versions may have varying versions of BASH and other dependencies. Ensure that your chosen distribution is still officially supported by the vendor and that it's compatible with the game server you intend to work with.
 
 ## Selecting a Test Environment
 
-There are mulitple ways to setup a test enviroment.
+### **Using a Linux Desktop**
 
-### Distro
+If you're already using a Linux desktop, you can run LinuxGSM directly on your desktop environment. This approach simplifies the setup process since LinuxGSM is natively compatible with Linux distributions.
 
-LinuxGSM is primarily developed on Ubuntu but also tested to work on CentOS and Debian. Different versions of a distro will also have different versions of BASH etc. So be mindful of newer features that might not be available on older supported distros. In general, LinuxGSM will support distros that are still officially supported by the vendor but is also reliant on if the Game Server also supports the distro. See [distro](https://docs.linuxgsm.com/linux/distro) for more info.
+### **Windows with WSL**
+
+For developers using Windows, Windows Subsystem for Linux (WSL) provides an efficient way to create a Linux test environment without dual-booting or using virtual machines. You can install a Linux distribution of your choice via WSL and then proceed to set up LinuxGSM within that distribution.
 
 ### Virtual Machine
 
-Creating a virtual machine on a desktop or laptop is a good way to create a development environment. Using Virtual Box and downloading Ubuntu Server iso a test environment can be created quickly. However, to test internet functionality there may be a requirement to open ports on a home router.
+Creating a virtual machine on your desktop or laptop is a versatile way to create a development environment. You can use tools like VirtualBox to download an Ubuntu Server ISO and quickly set up a test environment. Note that for testing internet functionality, you may need to configure port forwarding on your home router.
 
-If spare computer hardware is available, setting up an ESXi or Xen Server may be a good option for a development environment.
-
-* [Virtual Box](https://www.virtualbox.org/) \(recommended\)
+* [Virtual Box](https://www.virtualbox.org/)
 * [VMware Player](https://www.vmware.com/uk/products/workstation-player.html)
 * [ESXI Server](https://www.vmware.com/uk/products/esxi-and-esx.html)
 * [Xen](https://xenproject.org/)
@@ -24,36 +28,35 @@ If spare computer hardware is available, setting up an ESXi or Xen Server may be
 
 ### Internet Server
 
-VPS and dedicated servers can be rented relatively cheaply and is a good way to test LinuxGSM in the environment it is mostly used \(online\). There are several providers like Linode that provide servers from $5 p/m and allow the quick deployment of servers with different distros. Some game servers do have higher system requires than others so a more powerful VPS may be required.
+Renting a virtual private server (VPS) or dedicated server can be an excellent choice for testing LinuxGSM in an online environment, which closely resembles how it's commonly used. Several providers offer cost-effective server options, making it accessible for testing purposes.
 
-There are many providers to choose from but below LinuxGSM developers have used previously.
+Notable providers include:
 
 * [Linode](https://linode.com/)
 * [Digital Ocean](https://www.digitalocean.com/)
+* [OVHCloud](https://ovhcloud.com)
 * [Oneprovider](https://oneprovider.com/)
 * [Kimsufi](https://www.kimsufi.com/)
 
+## **Testing Your Code**
 
-
-At some point, you will need to test the code you have worked on. This can be done by downloading LinuxGSM and updating the repo and branch details to match your fork. 
-
-Login to your development environment and begin installing LinuxGSM
+At some point, you will need to test the code you have worked on. This can be done by downloading LinuxGSM and updating the repo and branch details to match your fork.
 
 #### Setup Testing Environment
 
-Login to your develop environment and begin installing LinuxGSM.
+Login to your development environment and begin installing LinuxGSM.
 
- 1. Create a user and log in.
+1. Create a user and log in.
 
-```text
+```
 adduser linuxgsm
 ```
 
-```text
+```
 passwd linuxgsm
 ```
 
-```text
+```
 su - linuxgsm
 ```
 
@@ -90,7 +93,7 @@ githubbranch="master"
 
 Every time you push to remote it is possible to pull the changes to the test environment. This is done by using the development command `clear-functions`.
 
-To use clear-functions activate development mode.
+To use clear-modules activate development mode.
 
 ```bash
 ./gameserver development
@@ -99,6 +102,5 @@ To use clear-functions activate development mode.
 Run the command.
 
 ```bash
-./gameserver clear-functions
+./gameserver clear-modules
 ```
-

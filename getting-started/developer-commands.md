@@ -23,6 +23,15 @@ This command also enables dev debug that outputs everything LinuxGSM is doing to
 ./gameserver dev
 ```
 
+### Detect Details
+
+Detects variables that are set up to be displayed in details.
+
+```
+./gameserver detect-details
+./gameserver ddt
+```
+
 ### Detect Dependencies
 
 Detects dependencies the server requires by checking the contents of `serverfiles`. The output suggests the install command required.

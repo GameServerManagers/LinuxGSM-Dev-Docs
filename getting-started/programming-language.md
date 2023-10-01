@@ -1,6 +1,6 @@
 # Programming Language
 
-![](.gitbook/assets/68747470733a2f2f63646e2e7261776769742e636f6d2f6f64622f6f6666696369616c2d626173682d6c6f676f2f6d617374.png)
+![](../.gitbook/assets/68747470733a2f2f63646e2e7261776769742e636f6d2f6f64622f6f6666696369616c2d626173682d6c6f676f2f6d617374.png)
 
 LinuxGSM is written in [Bourne-Again Shell](https://en.wikipedia.org/wiki/Bash\_\(Unix\_shell\)) (BASH) Script sometimes just known as Shell Script.
 
