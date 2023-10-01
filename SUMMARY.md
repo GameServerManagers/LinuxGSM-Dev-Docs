@@ -11,13 +11,16 @@
 * [Developing LinuxGSM](getting-started/developing-linuxgsm.md)
 * [Adding a new Game Server](getting-started/adding-a-new-game-server.md)
 
-## Workflow <a href="#workflow-1" id="workflow-1"></a>
+## Workflow
 
 * [Semantic Versioning](workflow-1/semantic-versioning.md)
 * [Workflow](workflow-1/workflow.md)
 * [Agile](workflow-1/agile.md)
 * [Pull Requests](workflow-1/branching.md)
 * [Gitflow](workflow-1/gitflow.md)
+
+## Technical
+
 
 ## Code Standards
 
@@ -32,6 +35,6 @@
 
 ***
 
-* [Game Server Querying](game-server-querying-1.md)
+* [Game Server Querying](game-server-querying.md)
 * [Unit Tests](unit-tests.md)
 * [Getting Started](feature-development-quick-guide.md)
