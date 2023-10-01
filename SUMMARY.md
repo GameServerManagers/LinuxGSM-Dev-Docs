@@ -13,14 +13,14 @@
 
 ## Workflow
 
-* [Semantic Versioning](workflow-1/semantic-versioning.md)
-* [Workflow](workflow-1/workflow.md)
-* [Agile](workflow-1/agile.md)
-* [Pull Requests](workflow-1/branching.md)
-* [Gitflow](workflow-1/gitflow.md)
+* [Semantic Versioning](workflow/semantic-versioning.md)
+* [Workflow](workflow/workflow.md)
+* [Agile](workflow/agile.md)
+* [Pull Requests](workflow/branching.md)
+* [Gitflow](workflow/gitflow.md)
 
 ## Technical
-
+* [Semantic Versioning](technical/commands.md)
 
 ## Code Standards
 
