@@ -10,6 +10,7 @@
 * [Test Environment](getting-started/test-environment.md)
 * [Developer Commands](getting-started/developer-commands.md)
 * [Adding a new Game Server](getting-started/adding-a-new-game-server.md)
+* [Adding a new Command](getting-started/adding-a-new-command.md)
 
 ## Workflow
 
