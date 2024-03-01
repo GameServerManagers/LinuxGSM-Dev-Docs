@@ -70,5 +70,5 @@ Not all game servers use SteamCMD. If this is the case a custom update module wi
 
 ## Custom Commands
 
-Some game servers may require bespoke commands to complete tasks. Examples of this include Teamspeak 3 and Unreal Tournament 2004. Take a look at the `core_getopts.sh` module for examples of how to add commands.
+Some game servers may require bespoke commands to complete tasks. Examples of this include Teamspeak 3 and Unreal Tournament 2004. Take a look at [Adding a new command](https://dev-docs.linuxgsm.com/getting-started/adding-a-new-command) for examples of how to add new commands.
 
