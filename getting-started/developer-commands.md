@@ -23,13 +23,23 @@ This command also enables dev debug that outputs everything LinuxGSM is doing to
 ./gameserver dev
 ```
 
-### Detect Details
+### Parse Game(-server) Details
 
-Detects variables that are set up to be displayed in details.
+Detects and displays all variables that the `info_game.sh` script parses from the gameserver configuration files.
+There will always be a lot of `Missing or Unsupported Server Details`. This is because different games have different server details.
 
+```bash
+./gameserver parse-game-details
+./gameserver pgd
 ```
-./gameserver detect-details
-./gameserver ddt
+
+### Parse Distro Details
+
+Detects and displays all variables that the `info_distro.sh` script parses from the operating system.
+
+```bash
+./gameserver parse-distro-details
+./gameserver pdd
 ```
 
 ### Detect Dependencies
