@@ -1,4 +1,3 @@
 # Game Server Querying
 
-\[WIP\]
-
+[WIP]

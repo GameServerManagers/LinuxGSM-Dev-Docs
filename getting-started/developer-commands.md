@@ -12,7 +12,7 @@ LinuxGSM provides commands to help developers gather information about the game 
 | Query Raw                                    | `./gameserver query-raw`      | `./gameserver qr`  |
 | Clear Functions                              | `./gameserver clear-modules`  | `./gameserver cm`  |
 
-### Developer
+## Developer
 
 The `developer` command enables development mode allowing access to all hidden developer commands.&#x20;
 
@@ -27,7 +27,7 @@ This command also enables dev debug that outputs everything LinuxGSM is doing to
 
 Detects variables that are set up to be displayed in details.
 
-```
+```bash
 ./gameserver detect-details
 ./gameserver ddt
 ```

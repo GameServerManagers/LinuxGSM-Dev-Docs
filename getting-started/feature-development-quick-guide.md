@@ -24,8 +24,4 @@ To begin working on LinuxGSM you need to [fork](https://help.github.com/en/githu
 
 It is recommended you create a [branch](../@linuxgsm/s/linuxgsm-dev/branching/) to develop your code. The branch should use the Gitflow methodology and should be named `feature/[featurename]`.
 
-Once a change has been made and saved the change will need to be committed to your local repo. When using commit it is important to leave a useful message to describe the change, this is covered in [Conventional Commits](../@linuxgsm/s/linuxgsm-dev/conventional-commits/). When you are ready to send your commits to your remote fork you will need to [push ](https://help.github.com/en/github/using-git/pushing-commits-to-a-remote-repository)the updates.
-
-##
-
-##
+Once a change has been made and saved the change will need to be committed to your local repo. When using commit it is important to leave a useful message to describe the change, this is covered in [Conventional Commits](../@linuxgsm/s/linuxgsm-dev/conventional-commits/). When you are ready to send your commits to your remote fork you will need to [push](https://help.github.com/en/github/using-git/pushing-commits-to-a-remote-repository)the updates.

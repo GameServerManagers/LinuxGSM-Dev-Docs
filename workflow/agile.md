@@ -1,4 +1,3 @@
 # Agile
 
-\[WIP\]
-
+[WIP]

@@ -10,11 +10,11 @@ For LinuxGSM development, it is important that developers understand what a func
 
 ### Examples
 
-```
+```text
 fn_stop_graceful_cmd
 ```
 
-```
+```text
 fn_update_ts3_dl
 ```
 
@@ -22,7 +22,7 @@ fn_update_ts3_dl
 
 All functions should be formatted with the following syntax.
 
-```
+```bash
 fn_function_name(){
     code
 }

@@ -28,7 +28,7 @@ The `develop` branch brings together all the `feature` branches ready to be test
 
 A feature branch is a development branch that is used while code is being actively worked on by developers. A feature branch should normally relate to an existing issue in GitHub. The feature branch should refer to the issue number and a word or two describing the issue, allowing other developers to know what issue branch is related to and helps with housekeeping.
 
-```
+```text
 feature\1234-glibc-migrate
 ```
 
@@ -42,7 +42,7 @@ The branch naming convention is less of an issue for developers who have forked 
 
 The `hotfix` branch is identical to the `feature` branch but instead is used for urgent fixes that need to be applied to master.
 
-```
+```text
 hotfix\1234-glibc-migrate
 ```
 

@@ -4,14 +4,14 @@
 
 The command-line tool for quick, simple deployment and management of Linux dedicated game servers.
 
-* User docs: [docs.linuxgsm.com](https://docs.linuxgsm.com)
-* Dev Docs: [dev-docs.linuxgsm.com](https://dev-docs.linuxgsm.com)
+-   User docs: [docs.linuxgsm.com](https://docs.linuxgsm.com)
+-   Dev Docs: [dev-docs.linuxgsm.com](https://dev-docs.linuxgsm.com)
 
 ## Introduction
 
 Welcome to the LinuxGSM developer documentation that covers how to get started, tooling, workflow, best practices, and code standards.
 
-If you want to contribute to LinuxGSM and need assistance feel free to pop on the LinuxGSM [Discord ](https://linuxgsm.com/discord)and have a chat with some of the contributors.
+If you want to contribute to LinuxGSM and need assistance feel free to pop on the LinuxGSM [Discord](https://linuxgsm.com/discord)and have a chat with some of the contributors.
 
 ## Work in Progress
 

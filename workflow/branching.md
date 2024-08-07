@@ -13,7 +13,7 @@ feat(alerts): add slack support to alerts
 ```
 
 ```bash
-fix(csgoserver): remove SteamCMD auth requirement 32-bit workaround 
+fix(csgoserver): remove SteamCMD auth requirement 32-bit workaround
 ```
 
 Once the Pull Request is created it is now time to wait.

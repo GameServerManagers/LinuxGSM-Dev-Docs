@@ -1,6 +1,6 @@
 # Commands
 
-## Commands
+## What are commands?
 
 Within LinuxGSM there are many commands that a user will run to complete tasks such as start, stop, monitor, and details. Command scripts are stored will all other modules and are always named something like `command_install.sh`. See the [commands](broken-reference) page for more info.
 

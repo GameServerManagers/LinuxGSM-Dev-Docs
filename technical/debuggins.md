@@ -2,14 +2,14 @@
 
 ## Testing and debugging your code
 
-#### Working from your own GitHub branch
+### Working from your own GitHub branch
 
 You will usually be developing onto your own repo. Using your own repo instead of the original one is quite easy.
 
 1. Display your main "gameserver" file on GitHub, and select "Raw".
 2. Make a test user, login to it
 3. wget your Raw link and chmod +x the script.
-4.  Edit your "gameserver" file by changing GitHub information to your username and repo and branch.
+4. Edit your "gameserver" file by changing GitHub information to your username and repo and branch.
 
     ```bash
     ## Github Branch Select
@@ -22,11 +22,11 @@ You will usually be developing onto your own repo. Using your own repo instead o
 
 Now, any command you run will get your own GitHub files, and after any change you make on your repo, `./gameserver uf` will grab new files. If you make a change and that `./gameserver uf` don't get them, it means you were too quick, and that your curl still has old files in cache; in this case, you'll need to wait a few minutes to get your modifications.
 
-#### How to test
+### How to test
 
-You need to make sure that all needed commands displayed in opt work properly. So just run `./gameserver` to show available commands, then try commands one by one. A common procedure is to first work on command\_install, then start, then stop, then debug, then details, then monitor.
+You need to make sure that all needed commands displayed in opt work properly. So just run `./gameserver` to show available commands, then try commands one by one. A common procedure is to first work on command_install, then start, then stop, then debug, then details, then monitor.
 
-#### Oops, I found a bug!
+### Oops, I found a bug
 
 If you found a bug, either you'll instantly know how to fix it, or you won't. And either it will be a bug caused by your own code or a bug into LinuxGSM itself. So let's address those cases.
 

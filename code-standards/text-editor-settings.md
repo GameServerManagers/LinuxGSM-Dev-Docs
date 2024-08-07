@@ -1,5 +1,5 @@
 ---
-description: '[WIP] discuss using LF and white space remover etc.'
+description: "[WIP] discuss using LF and white space remover etc."
 ---
 
 # Text Editor Settings
@@ -20,7 +20,7 @@ For more info about line endings check out the article "[The Great Newline Schis
 
 When developing code sometimes it can be easy to end up with trailing white spaces. as shown below.
 
-```
+```bash
 fn_example_func(){
     # The line below has two spaces after its final character
     code••

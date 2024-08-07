@@ -4,43 +4,43 @@ LGSM has a message/logging framework to avoid painful syntax into scripts.
 
 Framework syntax is: `fn_print_whatever "This is your message"` If you want to replace the line afterwards, then reuse `fn_print_whatever`. If you want a new output on a new line, then use `fn_print_whatever_nl`. "nl" stands for "new line".
 
-**On-Screen - Automated functions**
+## On-Screen - Automated functions
 
-* \[ .... ] | fn\_print\_dots | fn\_print\_dots\_nl
-* \[ OK ] | fn\_print\_ok | fn\_print\_ok\_nl
-* \[ FAIL ] | fn\_print\_fail | fn\_print\_fail\_nl
-* \[ ERROR ] | fn\_print\_error | fn\_print\_error\_nl
-* \[ WARN ] | fn\_print\_warn | fn\_print\_warn\_nl
-* \[ INFO ] | fn\_print\_info | fn\_print\_info\_nl
+-   [ .... ] | fn_print_dots | fn_print_dots_nl
+-   [ OK ] | fn_print_ok | fn_print_ok_nl
+-   [ FAIL ] | fn_print_fail | fn_print_fail_nl
+-   [ ERROR ] | fn_print_error | fn_print_error_nl
+-   [ WARN ] | fn_print_warn | fn_print_warn_nl
+-   [ INFO ] | fn_print_info | fn_print_info_nl
 
-**On-Screen - Interactive messages**
+## On-Screen - Interactive messages
 
-* Print $gamename $commandaction and jump some lines | fn\_print\_header (used at the beginning of a command)
-* Complete! |fn\_print\_complete | fn\_print\_complete\_nl
-* Failure! | fn\_print\_failure | fn\_print\_failure\_nl
-* Error! | fn\_print\_error2 | fn\_print\_error2\_nl
-* Warning! | fn\_print\_warning | fn\_print\_warning\_nl
-* Information! | fn\_print\_information | fn\_print\_information\_nl
+-   Print $gamename $commandaction and jump some lines | fn_print_header (used at the beginning of a command)
+-   Complete! |fn_print_complete | fn_print_complete_nl
+-   Failure! | fn_print_failure | fn_print_failure_nl
+-   Error! | fn_print_error2 | fn_print_error2_nl
+-   Warning! | fn_print_warning | fn_print_warning_nl
+-   Information! | fn_print_information | fn_print_information_nl
 
-**On-Screen End of Line**
+## On-Screen End of Line
 
-* OK| fn\_print\_ok\_eol | fn\_print\_ok\_eol\_nl
-* FAIL | fn\_print\_fail\_eol | fn\_print\_fail\_eol\_nl
-* WARN | fn\_print\_warn\_eol | fn\_print\_warn\_eol\_nl
-* FAIL | fn\_print\_info\_eol | fn\_print\_info\_eol\_nl
-* QUERYING | fn\_print\_querying\_eol | fn\_print\_querying\_eol\_nl
-* CHECKING | fn\_print\_checking\_eol | fn\_print\_checking\_eol\_nl
-* CANCELED | fn\_print\_canceled\_eol | fn\_print\_canceled\_eol\_nl
-* REMOVED | fn\_print\_removed\_eol | fn\_print\_removed\_eol\_nl
-* UPDATE | fn\_print\_update\_eol | fn\_print\_update\_eol\_nl
+-   OK| fn_print_ok_eol | fn_print_ok_eol_nl
+-   FAIL | fn_print_fail_eol | fn_print_fail_eol_nl
+-   WARN | fn_print_warn_eol | fn_print_warn_eol_nl
+-   FAIL | fn_print_info_eol | fn_print_info_eol_nl
+-   QUERYING | fn_print_querying_eol | fn_print_querying_eol_nl
+-   CHECKING | fn_print_checking_eol | fn_print_checking_eol_nl
+-   CANCELED | fn_print_canceled_eol | fn_print_canceled_eol_nl
+-   REMOVED | fn_print_removed_eol | fn_print_removed_eol_nl
+-   UPDATE | fn_print_update_eol | fn_print_update_eol_nl
 
-**Logging**
+## Logging
 
 Syntax: `fn_script_log "Message goes here."` Output: `## Feb 28 14:56:58 ut99-server: Monitor: Message goes here.`
 
-* Simple action log | fn\_script\_log
-* PASS (a successful test) | fn\_script\_log\_pass
-* FATAL (an error has interrupted LGSM) | fn\_script\_log\_fatal
-* ERROR | fn\_script\_log\_error
-* WARN | fn\_script\_log\_warn
-* INFO | fn\_script\_log\_info
+-   Simple action log | fn_script_log
+-   PASS (a successful test) | fn_script_log_pass
+-   FATAL (an error has interrupted LGSM) | fn_script_log_fatal
+-   ERROR | fn_script_log_error
+-   WARN | fn_script_log_warn
+-   INFO | fn_script_log_info

@@ -20,11 +20,11 @@ For developers using Windows, Windows Subsystem for Linux (WSL) provides an effi
 
 Creating a virtual machine on your desktop or laptop is a versatile way to create a development environment. You can use tools like VirtualBox to download an Ubuntu Server ISO and quickly set up a test environment. Note that for testing internet functionality, you may need to configure port forwarding on your home router.
 
-* [Virtual Box](https://www.virtualbox.org/)
-* [VMware Player](https://www.vmware.com/uk/products/workstation-player.html)
-* [ESXI Server](https://www.vmware.com/uk/products/esxi-and-esx.html)
-* [Xen](https://xenproject.org/)
-* [Proxmox](https://www.proxmox.com/)
+-   [Virtual Box](https://www.virtualbox.org/)
+-   [VMware Player](https://www.vmware.com/uk/products/workstation-player.html)
+-   [ESXI Server](https://www.vmware.com/uk/products/esxi-and-esx.html)
+-   [Xen](https://xenproject.org/)
+-   [Proxmox](https://www.proxmox.com/)
 
 ### Internet Server
 
@@ -32,38 +32,38 @@ Renting a virtual private server (VPS) or dedicated server can be an excellent c
 
 Notable providers include:
 
-* [Linode](https://linode.com/)
-* [Digital Ocean](https://www.digitalocean.com/)
-* [OVHCloud](https://ovhcloud.com)
-* [Oneprovider](https://oneprovider.com/)
-* [Kimsufi](https://www.kimsufi.com/)
+-   [Linode](https://linode.com/)
+-   [Digital Ocean](https://www.digitalocean.com/)
+-   [OVHCloud](https://ovhcloud.com)
+-   [Oneprovider](https://oneprovider.com/)
+-   [Kimsufi](https://www.kimsufi.com/)
 
 ## **Testing Your Code**
 
 At some point, you will need to test the code you have worked on. This can be done by downloading LinuxGSM and updating the repo and branch details to match your fork.
 
-#### Setup Testing Environment
+### Setup Testing Environment
 
 Login to your development environment and begin installing LinuxGSM.
 
 1. Create a user and log in.
 
-```
+```bash
 adduser linuxgsm
 ```
 
-```
+```bash
 passwd linuxgsm
 ```
 
-```
+```bash
 su - linuxgsm
 ```
 
 > replace `[gameserver]` with the game server you are developing.
 
 ```bash
-mkdir [gameserver] 
+mkdir [gameserver]
 ```
 
 2. Download linuxgsm.sh.
